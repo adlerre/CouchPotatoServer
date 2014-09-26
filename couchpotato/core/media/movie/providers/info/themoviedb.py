@@ -16,11 +16,15 @@ class TheMovieDb(MovieProvider):
     MAX_EXTRATHUMBS = 4
 
     def __init__(self):
-        addEvent('movie.info', self.getInfo, priority = 3)
+        addEvent('movie.info', self.getInfo, priority = 1)
         addEvent('movie.info_by_tmdb', self.getInfo)
+        
+        addEvent('info.search', self.search, priority = 1)
+        addEvent('movie.search', self.search, priority = 1)
 
         # Configure TMDB settings
         tmdb3.set_key(self.conf('api_key'))
+        tmdb3.set_locale(self.conf('locale', None))
         tmdb3.set_cache('null')
 
     def search(self, q, limit = 12):
@@ -223,6 +227,11 @@ config = [{
                     'default': '9b939aee0aaafc12a65bf448e4af9543',
                     'label': 'Api Key',
                 },
+                {
+                    'name': 'locale',
+                    'default': 'de',
+                    'label': 'The locale for search.',
+                }
             ],
         },
     ],

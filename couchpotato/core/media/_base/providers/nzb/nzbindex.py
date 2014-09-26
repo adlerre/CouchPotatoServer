@@ -116,7 +116,7 @@ class Base(NZBProvider, RSS):
                 status_code = response.status_code
                 if response.status_code == requests.codes.ok:
                     data = response if stream else response.content
-                    break;
+                    break
                 else:
                     if retry < num_retries:
                         log.info('Retry %s from %s...', (str(retry + 1), str(num_retries)))
@@ -125,6 +125,7 @@ class Base(NZBProvider, RSS):
                     else:
                         log.error('Max retries reached!')
                         response.raise_for_status()
+                        break
 
             self.http_failed_request[host] = 0
         except (IOError, MaxRetryError, Timeout):

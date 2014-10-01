@@ -4,6 +4,7 @@ import re
 import shutil
 import time
 import traceback
+from unidecode import unidecode
 
 from couchpotato import get_db
 from couchpotato.api import addApiView
@@ -377,8 +378,8 @@ class Renamer(Plugin):
                         if separator:
                             final_file_name = final_file_name.replace(' ', separator)
 
-                        final_folder_name = ss(final_folder_name)
-                        final_file_name = ss(final_file_name)
+                        final_folder_name = unidecode(ss(final_folder_name))
+                        final_file_name = unidecode(ss(final_file_name))
 
                         # Move DVD files (no structure renaming)
                         if group['is_dvd'] and file_type is 'movie':

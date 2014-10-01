@@ -378,8 +378,8 @@ class Renamer(Plugin):
                         if separator:
                             final_file_name = final_file_name.replace(' ', separator)
 
-                        final_folder_name = ss(unidecode(final_folder_name))
-                        final_file_name = ss(unidecode(final_file_name))
+                        final_folder_name = ss(unidecode(replaceUmlauts(final_folder_name)))
+                        final_file_name = ss(unidecode(replaceUmlauts(final_file_name)))
 
                         # Move DVD files (no structure renaming)
                         if group['is_dvd'] and file_type is 'movie':

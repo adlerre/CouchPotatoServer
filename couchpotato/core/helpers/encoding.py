@@ -25,6 +25,16 @@ def simplifyString(original):
     split = re.split('\W+|_', string.lower())
     return toUnicode(' '.join(split))
 
+def replaceUmlauts(original):
+    newstr = original.replace(original,"ä","ae")
+    newstr = newstr.replace(newstr,"ö","oe")
+    newstr = newstr.replace(newstr,"ü","ue")
+    newstr = newstr.replace(newstr,"ß","ss")
+    newstr = newstr.replace(newstr,"Ä","Ae")
+    newstr = newstr.replace(newstr,"Ö","Oe")
+    newstr = newstr.replace(newstr,"Ü","Ue")
+    
+    return newstr
 
 def toUnicode(original, *args):
     try:

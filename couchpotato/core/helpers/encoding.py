@@ -1,4 +1,3 @@
-#-*- coding: UTF-8 -*-
 from string import ascii_letters, digits
 from urllib import quote_plus
 import os
@@ -27,15 +26,26 @@ def simplifyString(original):
     return toUnicode(' '.join(split))
 
 def replaceUmlauts(original):
-    newstr = original.replace("ä", "ae")
-    newstr = newstr.replace("ö", "oe")
-    newstr = newstr.replace("ü", "ue")
-    newstr = newstr.replace("ß", "ss")
-    newstr = newstr.replace("Ä", "Ae")
-    newstr = newstr.replace("Ö", "Oe")
-    newstr = newstr.replace("Ü", "Ue")
+    s = original
+    #                          # Unicode Name
+    s = s.replace("\xE4","ae") # U+00E4  LATIN SMALL LETTER A WITH DIAERESIS
+    s = s.replace("\xF6","oe") # U+00F6  LATIN SMALL LETTER O WITH DIAERESIS
+    s = s.replace("\xFC","ue") # U+00FC  LATIN SMALL LETTER U WITH DIAERESIS
+    s = s.replace("\xC4","Ae") # U+00C4  LATIN CAPITAL LETTER A WITH DIAERESIS
+    s = s.replace("\xD6","Oe") # U+00D6  LATIN CAPITAL LETTER O WITH DIAERESIS
+    s = s.replace("\xDC","Ue") # U+00DC  LATIN CAPITAL LETTER U WITH DIAERESIS
+    s = s.replace("\xDF","ss") # U+00DF  LATIN SMALL LETTER SHARP S
+    s = s.replace("\xE9","e")  # U+00E9  LATIN SMALL LETTER E WITH ACUTE
+    s = s.replace("\xE8","e")  # U+00E8  LATIN SMALL LETTER E WITH GRAVE
+    s = s.replace("\xEA","e")  # U+00EA  LATIN SMALL LETTER E WITH CIRCUMFLEX
+    s = s.replace("\xE1","a")  # U+00E1  LATIN SMALL LETTER A WITH ACUTE
+    s = s.replace("\xE0","a")  # U+00E0  LATIN SMALL LETTER A WITH GRAVE
+    s = s.replace("\xE2","a")  # U+00E2  LATIN SMALL LETTER A WITH CIRCUMFLEX
+    s = s.replace("\xE5","a")  # U+00E5  LATIN SMALL LETTER A WITH RING ABOVE
+    s = s.replace("\xB2","2")  # U+00B2  SUPERSCRIPT TWO
+    s = s.replace("\xB3","3")  # U+00B3  SUPERSCRIPT THREE
     
-    return newstr
+    return s
 
 def toUnicode(original, *args):
     try:

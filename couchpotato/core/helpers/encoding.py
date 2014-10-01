@@ -1,3 +1,4 @@
+#-*- coding: UTF-8 -*-
 from string import ascii_letters, digits
 from urllib import quote_plus
 import os
@@ -26,13 +27,13 @@ def simplifyString(original):
     return toUnicode(' '.join(split))
 
 def replaceUmlauts(original):
-    newstr = original.replace(original,"ä","ae")
-    newstr = newstr.replace(newstr,"ö","oe")
-    newstr = newstr.replace(newstr,"ü","ue")
-    newstr = newstr.replace(newstr,"ß","ss")
-    newstr = newstr.replace(newstr,"Ä","Ae")
-    newstr = newstr.replace(newstr,"Ö","Oe")
-    newstr = newstr.replace(newstr,"Ü","Ue")
+    newstr = original.replace(original, u"ä", "ae")
+    newstr = newstr.replace(newstr, u"ö", "oe")
+    newstr = newstr.replace(newstr, u"ü", "ue")
+    newstr = newstr.replace(newstr, u"ß", "ss")
+    newstr = newstr.replace(newstr, u"Ä", "Ae")
+    newstr = newstr.replace(newstr, u"Ö", "Oe")
+    newstr = newstr.replace(newstr, u"Ü", "Ue")
     
     return newstr
 

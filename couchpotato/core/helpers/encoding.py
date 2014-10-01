@@ -25,8 +25,8 @@ def simplifyString(original):
     split = re.split('\W+|_', string.lower())
     return toUnicode(' '.join(split))
 
-def replaceUmlauts(original):
-    s = original
+def replaceUmlauts(original, *args):
+    s = toUnicode(original, *args)
     #                          # Unicode Name
     s = s.replace("\xE4","ae") # U+00E4  LATIN SMALL LETTER A WITH DIAERESIS
     s = s.replace("\xF6","oe") # U+00F6  LATIN SMALL LETTER O WITH DIAERESIS

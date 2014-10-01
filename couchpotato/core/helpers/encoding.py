@@ -27,13 +27,13 @@ def simplifyString(original):
     return toUnicode(' '.join(split))
 
 def replaceUmlauts(original):
-    newstr = original.replace(original, "ä", "ae")
-    newstr = newstr.replace(newstr, "ö", "oe")
-    newstr = newstr.replace(newstr, "ü", "ue")
-    newstr = newstr.replace(newstr, "ß", "ss")
-    newstr = newstr.replace(newstr, "Ä", "Ae")
-    newstr = newstr.replace(newstr, "Ö", "Oe")
-    newstr = newstr.replace(newstr, "Ü", "Ue")
+    newstr = original.replace("ä", "ae")
+    newstr = newstr.replace("ö", "oe")
+    newstr = newstr.replace("ü", "ue")
+    newstr = newstr.replace("ß", "ss")
+    newstr = newstr.replace("Ä", "Ae")
+    newstr = newstr.replace("Ö", "Oe")
+    newstr = newstr.replace("Ü", "Ue")
     
     return newstr
 

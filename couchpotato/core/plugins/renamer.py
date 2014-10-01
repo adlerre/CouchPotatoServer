@@ -413,10 +413,7 @@ class Renamer(Plugin):
 
                             # rename subtitles with or without language
                             sub_name = self.doReplace(file_name, replacements, remove_multiple = remove_multiple)
-                            try:
-                                rename_files[current_file] = os.path.join(destination, final_folder_name, sub_name)
-                            except:
-                                rename_files[current_file] = os.path.join(destination, final_folder_name.decode('utf-8'), sub_name)
+                            rename_files[current_file] = os.path.join(destination, final_folder_name, sub_name)
 
                             rename_extras = self.getRenameExtras(
                                 extra_type = 'subtitle_extra',

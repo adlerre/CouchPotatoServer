@@ -9,7 +9,7 @@ from unidecode import unidecode
 from couchpotato import get_db
 from couchpotato.api import addApiView
 from couchpotato.core.event import addEvent, fireEvent, fireEventAsync
-from couchpotato.core.helpers.encoding import toUnicode, ss, sp
+from couchpotato.core.helpers.encoding import toUnicode, ss, sp, replaceUmlauts
 from couchpotato.core.helpers.variable import getExt, mergeDicts, getTitle, \
     getImdb, link, symlink, tryInt, splitString, fnEscape, isSubFolder, \
     getIdentifier, randomString, getFreeSpace, getSize

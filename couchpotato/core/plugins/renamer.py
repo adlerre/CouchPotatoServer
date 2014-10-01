@@ -9,7 +9,7 @@ from unidecode import unidecode
 from couchpotato import get_db
 from couchpotato.api import addApiView
 from couchpotato.core.event import addEvent, fireEvent, fireEventAsync
-from couchpotato.core.helpers.encoding import toUnicode, ss, sp, replaceUmlauts
+from couchpotato.core.helpers.encoding import toUnicode, ss, sp
 from couchpotato.core.helpers.variable import getExt, mergeDicts, getTitle, \
     getImdb, link, symlink, tryInt, splitString, fnEscape, isSubFolder, \
     getIdentifier, randomString, getFreeSpace, getSize
@@ -378,8 +378,8 @@ class Renamer(Plugin):
                         if separator:
                             final_file_name = final_file_name.replace(' ', separator)
 
-                        final_folder_name = ss(replaceUmlauts(final_folder_name))
-                        final_file_name = ss(replaceUmlauts(final_file_name))
+                        final_folder_name = ss(unidecode(final_folder_name))
+                        final_file_name = ss(unidecode(final_file_name))
 
                         # Move DVD files (no structure renaming)
                         if group['is_dvd'] and file_type is 'movie':

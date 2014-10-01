@@ -86,7 +86,7 @@ data = (
 'A',    # 0xc3
 
 # Not "AE" - used in languages other than German
-'A',    # 0xc4
+'Ae',    # 0xc4
 
 'A',    # 0xc5
 'AE',    # 0xc6
@@ -107,7 +107,7 @@ data = (
 'O',    # 0xd5
 
 # Not "OE" - used in languages other than German
-'O',    # 0xd6
+'Oe',    # 0xd6
 
 'x',    # 0xd7
 'O',    # 0xd8
@@ -116,7 +116,7 @@ data = (
 'U',    # 0xdb
 
 # Not "UE" - used in languages other than German
-'U',    # 0xdc
+'Ue',    # 0xdc
 
 'Y',    # 0xdd
 'Th',    # 0xde
@@ -127,7 +127,7 @@ data = (
 'a',    # 0xe3
 
 # Not "ae" - used in languages other than German
-'a',    # 0xe4
+'ae',    # 0xe4
 
 'a',    # 0xe5
 'ae',    # 0xe6
@@ -148,7 +148,7 @@ data = (
 'o',    # 0xf5
 
 # Not "oe" - used in languages other than German
-'o',    # 0xf6
+'oe',    # 0xf6
 
 '/',    # 0xf7
 'o',    # 0xf8
@@ -157,7 +157,7 @@ data = (
 'u',    # 0xfb
 
 # Not "ue" - used in languages other than German
-'u',    # 0xfc
+'ue',    # 0xfc
 
 'y',    # 0xfd
 'th',    # 0xfe
